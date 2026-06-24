@@ -1,1 +1,867 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarlaa - Web3 Community Enthusiast</title>
+    <style>
+        /* Import Google Font untuk tampilan modern dan elegan */
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
+        /* CSS Variables & Color Palette */
+        :root {
+            --soft-pink: #FFD1DC;
+            --sakura-pink: #FFB7C5;
+            --lavender: #E6E6FA;
+            --white: #FFFFFF;
+            --neon-cyan: #00FFFF;
+            --neon-purple: #B026FF;
+            --dark-bg: #120b1c;
+            --text-dark: #333333;
+            --text-light: #F8F8FF;
+            --glass-bg: rgba(255, 255, 255, 0.4);
+            --glass-border: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+            background-color: var(--white);
+            color: var(--text-dark);
+            transition: background 0.5s ease;
+        }
+
+        /* Sakura Animation Container */
+        #sakura-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        .petal {
+            position: absolute;
+            background: linear-gradient(135deg, var(--sakura-pink), #fff);
+            border-radius: 15px 0 15px 0;
+            box-shadow: 0 0 5px rgba(255, 183, 197, 0.5);
+            opacity: 0.8;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg) scale(0.8); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(110vh) rotate(360deg) scale(1); opacity: 0; }
+        }
+
+        /* Navbar & Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--neon-purple);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-shadow: 0 0 10px rgba(176, 38, 255, 0.3);
+            animation: bounceSoft 3s ease-in-out infinite;
+            cursor: pointer;
+        }
+
+        .sparkle {
+            font-size: 1.2rem;
+            animation: twinkle 1.5s infinite alternate;
+        }
+
+        @keyframes bounceSoft {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        @keyframes twinkle {
+            from { opacity: 0.5; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1.2); text-shadow: 0 0 15px var(--neon-cyan); }
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            position: relative;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(90deg, var(--sakura-pink), var(--neon-purple));
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover::after, nav ul li a.active::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--neon-purple);
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        /* Section Setup */
+        section {
+            display: none; /* Hide all sections by default */
+            min-height: 100vh;
+            padding: 120px 50px 50px;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        section.active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- HOME PAGE (Soft Sakura Dreamy) --- */
+        #home {
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 183, 197, 0.6)), 
+                        url('https://raw.githubusercontent.com/hendroah/Sarla-Portofolio-/b16358e64c0618b0bb45575fefadbeed771480e3/IMG-20260624-WA0074.jpg') center/cover no-repeat;
+            /* Latar belakang disesuaikan dengan gambar dan overlay pink agar teks tetap terbaca */
+        }
+
+        .home-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-frame {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: url('https://raw.githubusercontent.com/hendroah/Sarla-Portofolio-/edc7d25b4782abb55e8666099ff5cb8e6b474a59/IMG-20260624-WA0073.jpg') center/cover;
+            border: 5px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 25px var(--sakura-pink), inset 0 0 15px rgba(255, 255, 255, 0.5);
+            animation: sakuraPulse 3s infinite alternate;
+            margin-bottom: 20px;
+        }
+
+        @keyframes sakuraPulse {
+            from { box-shadow: 0 0 20px var(--sakura-pink), 0 0 10px rgba(255, 183, 197, 0.5); }
+            to { box-shadow: 0 0 40px var(--soft-pink), 0 0 25px var(--sakura-pink); }
+        }
+
+        .home-title {
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ff6b81, var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+
+        .home-subtitle {
+            font-size: 1.5rem;
+            color: #555;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--sakura-pink), var(--neon-purple));
+            color: white;
+            box-shadow: 0 4px 15px rgba(176, 38, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(176, 38, 255, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.5);
+            color: var(--text-dark);
+            border: 2px solid var(--sakura-pink);
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-secondary:hover {
+            background: var(--sakura-pink);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* --- ABOUT PAGE (Clean White Pink Elegant) --- */
+        #about {
+            background: radial-gradient(circle at top left, #ffffff, #fff0f5);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--neon-purple);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '🌸';
+            position: absolute;
+            top: -20px;
+            right: -30px;
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+
+        .about-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            padding: 50px;
+            border-radius: 30px;
+            max-width: 800px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #444;
+        }
+
+        .about-card p {
+            margin-bottom: 20px;
+        }
+
+        /* --- WEB3 ACTIVITY (Futuristic Lavender Cyber) --- */
+        #web3-activity {
+            background: linear-gradient(135deg, #e6e6fa, #f3e5f5, #e0f7fa);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .activity-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .activity-card::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        .activity-card:hover::before {
+            opacity: 1;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(176, 38, 255, 0.2);
+            border-color: var(--neon-purple);
+        }
+
+        .icon-box {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .activity-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .activity-card p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        /* --- SKILLS PAGE (Modern Glass Card) --- */
+        #skills {
+            background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+            position: relative;
+        }
+
+        /* Floating Blobs for Glass Effect */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: -1;
+            animation: float 10s infinite ease-in-out;
+        }
+        .blob-1 { top: 20%; left: 10%; width: 300px; height: 300px; background: var(--sakura-pink); opacity: 0.5; }
+        .blob-2 { bottom: 10%; right: 10%; width: 400px; height: 400px; background: var(--lavender); opacity: 0.6; }
+        .blob-3 { top: 50%; left: 50%; width: 250px; height: 250px; background: #e0f7fa; opacity: 0.5; animation-delay: -5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, -30px); }
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .skill-item {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: 600;
+            color: #444;
+            transition: 0.3s;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+
+        .skill-item:hover {
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(1.05);
+            border-color: var(--sakura-pink);
+            color: var(--neon-purple);
+        }
+
+        /* --- COMMUNITY EXPERIENCE (Dark Soft Web3 Glow) --- */
+        #community {
+            background: var(--dark-bg);
+            color: var(--text-light);
+            background-image: radial-gradient(circle at center, #2a1b3d 0%, var(--dark-bg) 100%);
+        }
+
+        #community .section-title {
+            color: var(--sakura-pink);
+            text-shadow: 0 0 15px rgba(255, 183, 197, 0.5);
+        }
+
+        .timeline {
+            max-width: 800px;
+            width: 100%;
+            border-left: 2px solid var(--neon-purple);
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            background: var(--neon-cyan);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--neon-cyan);
+        }
+
+        .exp-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(176, 38, 255, 0.3);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(176, 38, 255, 0.1);
+            transition: 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .exp-card:hover {
+            box-shadow: 0 0 30px rgba(176, 38, 255, 0.3);
+            border-color: var(--neon-cyan);
+            transform: translateX(10px);
+        }
+
+        .exp-card h3 {
+            color: var(--neon-cyan);
+            margin-bottom: 10px;
+        }
+
+        .exp-card p {
+            color: #d1d1e0;
+            line-height: 1.6;
+        }
+
+        /* --- CONTACT (Cute Minimal Feminine) --- */
+        #contact {
+            background: #fffafa;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Diubah menjadi anchor styling agar clickable */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(255, 183, 197, 0.3);
+            border: 1px solid var(--soft-pink);
+            transition: 0.3s;
+            text-decoration: none;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(176, 38, 255, 0.2);
+            border-color: var(--neon-purple);
+            background: rgba(255, 230, 235, 0.3); /* Slight hover tint */
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+        }
+
+        .contact-text {
+            width: 100%;
+            font-size: 1rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                align-items: center;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: 0.4s ease;
+                border-bottom: 1px solid var(--soft-pink);
+            }
+
+            nav ul.active {
+                max-height: 300px;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 15px;
+                color: var(--text-dark) !important; /* Force dark text on mobile menu */
+            }
+
+            .home-title { font-size: 3rem; }
+            .home-subtitle { font-size: 1.2rem; }
+            
+            section {
+                padding: 100px 20px 40px;
+            }
+            
+            .timeline::before {
+                left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Animasi Sakura -->
+    <div id="sakura-container"></div>
+
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="logo" onclick="navigateTo('home')">
+            My Portofolio <span class="sparkle">✨</span>
+        </div>
+        <div class="menu-toggle" id="mobile-menu" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav>
+            <ul id="nav-links">
+                <li><a href="#" onclick="navigateTo('home')" class="nav-link active" data-target="home">Home</a></li>
+                <li><a href="#" onclick="navigateTo('about')" class="nav-link" data-target="about">About</a></li>
+                <li><a href="#" onclick="navigateTo('web3-activity')" class="nav-link" data-target="web3-activity">Web3 Activity</a></li>
+                <li><a href="#" onclick="navigateTo('skills')" class="nav-link" data-target="skills">Skills</a></li>
+                <li><a href="#" onclick="navigateTo('community')" class="nav-link" data-target="community">Community</a></li>
+                <li><a href="#" onclick="navigateTo('contact')" class="nav-link" data-target="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HOME SECTION -->
+        <section id="home" class="active">
+            <div class="home-content">
+                <div class="profile-frame"></div>
+                <h1 class="home-title">Sarlaa</h1>
+                <h2 class="home-subtitle">Web3 Community Enthusiast</h2>
+                <div class="btn-group">
+                    <button class="btn btn-primary" onclick="navigateTo('about')">View Profile</button>
+                    <button class="btn btn-secondary" onclick="navigateTo('contact')">Contact Me</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-card">
+                <p>Saya merupakan individu yang aktif berpartisipasi dalam ekosistem Web3 dan memiliki minat yang tinggi terhadap perkembangan teknologi blockchain, AI, dan komunitas digital global. Saya terbiasa berinteraksi dengan komunitas internasional, membangun engagement, serta berkontribusi dalam berbagai aktivitas komunitas seperti diskusi, event, dan campaign.</p>
+                <p>Saya memiliki kemampuan beradaptasi dengan cepat, semangat belajar yang tinggi, dan mampu bekerja secara kolaboratif dalam lingkungan yang dinamis.</p>
+            </div>
+        </section>
+
+        <!-- WEB3 ACTIVITY SECTION -->
+        <section id="web3-activity">
+            <h2 class="section-title">Web3 Activity</h2>
+            <div class="grid-container">
+                <div class="activity-card">
+                    <div class="icon-box">👾</div>
+                    <h3>Discord Community</h3>
+                    <p>Aktif berinteraksi, memoderasi, dan membangun engagement dalam komunitas Web3 internasional di platform Discord.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="icon-box">✈️</div>
+                    <h3>Telegram Network</h3>
+                    <p>Mengelola dan berpartisipasi aktif dalam grup diskusi Telegram untuk update project, sharing informasi, dan networking.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="icon-box">🎉</div>
+                    <h3>Campaign & Event</h3>
+                    <p>Terlibat dalam berbagai platform campaign, whitelist grinding, Zealy, Galxe, dan event Web3 global lainnya.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="icon-box">🔗</div>
+                    <h3>Blockchain & AI Ecosystem</h3>
+                    <p>Mengikuti perkembangan ekosistem blockchain terbaru dan integrasi AI dalam aktivitas komunitas digital masa depan.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills">
+            <!-- Background Blobs -->
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+            
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">💖 Community Engagement</div>
+                <div class="skill-item">🤝 Community Support</div>
+                <div class="skill-item">💬 Communication Skills</div>
+                <div class="skill-item">🎙️ Event Participation</div>
+                <div class="skill-item">📝 Content & Discussion</div>
+                <div class="skill-item">👯‍♀️ Team Collaboration</div>
+                <div class="skill-item">🌱 Fast Learning & Adaptability</div>
+                <div class="skill-item">🌐 Web3 Ecosystem Focus</div>
+            </div>
+        </section>
+
+        <!-- COMMUNITY EXPERIENCE SECTION -->
+        <section id="community">
+            <h2 class="section-title">Web3 Roles & Experience</h2>
+            <div class="timeline">
+                
+                <!-- Moderator - KOLs -->
+                <div class="timeline-item">
+                    <div class="exp-card">
+                        <h3>Community Moderator</h3>
+                        <p style="color: var(--sakura-pink); margin-bottom: 12px; font-size: 0.95rem; font-weight: 500;">📍 KOLs</p>
+                        <p>Managing and moderating the KOLs community channels. Ensuring a safe, engaging, and active environment for members while assisting with daily inquiries.</p>
+                    </div>
+                </div>
+
+                <!-- Moderator - Syntrax -->
+                <div class="timeline-item">
+                    <div class="exp-card">
+                        <h3>Community Moderator</h3>
+                        <p style="color: var(--sakura-pink); margin-bottom: 12px; font-size: 0.95rem; font-weight: 500;">📍 Syntrax</p>
+                        <p>Serving as a moderator for Syntrax. Resolving issues, assisting members, and strictly enforcing community guidelines to maintain a healthy ecosystem.</p>
+                    </div>
+                </div>
+
+                <!-- Ambassador - DRX -->
+                <div class="timeline-item">
+                    <div class="exp-card">
+                        <h3>Brand Ambassador</h3>
+                        <p style="color: var(--sakura-pink); margin-bottom: 12px; font-size: 0.95rem; font-weight: 500;">📍 DRX</p>
+                        <p>Serving as a brand ambassador to promote DRX awareness globally. Driving community growth, actively assisting in campaigns, and bridging the core team and community.</p>
+                    </div>
+                </div>
+
+                <!-- OG - Neosoul -->
+                <div class="timeline-item">
+                    <div class="exp-card">
+                        <h3>OG (Early Supporter)</h3>
+                        <p style="color: var(--sakura-pink); margin-bottom: 12px; font-size: 0.95rem; font-weight: 500;">📍 Neosoul</p>
+                        <p>Recognized as an Original Gangster (OG) and early contributor for Neosoul. Actively participating since the early stages and helping shape a strong community culture.</p>
+                    </div>
+                </div>
+
+                <!-- OG - KOLs -->
+                <div class="timeline-item">
+                    <div class="exp-card">
+                        <h3>OG (Early Supporter)</h3>
+                        <p style="color: var(--sakura-pink); margin-bottom: 12px; font-size: 0.95rem; font-weight: 500;">📍 KOLs</p>
+                        <p>Early supporter and OG for the KOLs project, providing valuable feedback and maintaining consistent positive engagement since its inception.</p>
+                    </div>
+                </div>
+
+                <!-- OG - Syntrax -->
+                <div class="timeline-item">
+                    <div class="exp-card">
+                        <h3>OG (Early Supporter)</h3>
+                        <p style="color: var(--sakura-pink); margin-bottom: 12px; font-size: 0.95rem; font-weight: 500;">📍 Syntrax</p>
+                        <p>OG member of Syntrax, continuously contributing to the ecosystem and supporting the project's development and community growth.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <!-- Discord Link -->
+                <a href="https://discord.com/users/1113157657029775390" target="_blank" class="contact-item">
+                    <div class="contact-icon">👾</div>
+                    <div class="contact-text">Discord Profile</div>
+                </a>
+                
+                <!-- Telegram Link -->
+                <a href="https://t.me/nospicygirl" target="_blank" class="contact-item">
+                    <div class="contact-icon">✈️</div>
+                    <div class="contact-text">@nospicygirl</div>
+                </a>
+                
+                <!-- X (Twitter) Link -->
+                <a href="https://x.com/20Matcha" target="_blank" class="contact-item">
+                    <div class="contact-icon">🐦</div>
+                    <div class="contact-text">@20Matcha</div>
+                </a>
+                
+                <!-- Email Link -->
+                <a href="mailto:nomnomie29@gmail.com" class="contact-item">
+                    <div class="contact-icon">💌</div>
+                    <div class="contact-text">nomnomie29@gmail.com</div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // === SAKURA ANIMATION GENERATOR ===
+        const sakuraContainer = document.getElementById('sakura-container');
+        const maxPetals = 40; // Batas maksimal bunga di layar
+        
+        function createPetal() {
+            if (sakuraContainer.childElementCount > maxPetals) return;
+
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
+            
+            // Randomize size, position, and duration
+            const size = Math.random() * 10 + 5; // 5px to 15px
+            petal.style.width = `${size}px`;
+            petal.style.height = `${size * 1.5}px`;
+            petal.style.left = `${Math.random() * 100}vw`;
+            
+            const duration = Math.random() * 5 + 5; // 5s to 10s
+            petal.style.animationDuration = `${duration}s`;
+            
+            sakuraContainer.appendChild(petal);
+            
+            // Remove petal after animation to clean up DOM
+            setTimeout(() => {
+                petal.remove();
+            }, duration * 1000);
+        }
+
+        // Generate sakura continuously
+        setInterval(createPetal, 400);
+
+        // === NAVIGATION / SPA LOGIC ===
+        const header = document.getElementById('header');
+        const navLinksList = document.getElementById('nav-links');
+        
+        function navigateTo(sectionId) {
+            // Prevent default behavior if called from anchor
+            if(event) event.preventDefault();
+
+            // 1. Hide all sections
+            document.querySelectorAll('section').forEach(sec => {
+                sec.classList.remove('active');
+                // Force re-trigger animation by removing and adding class
+                void sec.offsetWidth; 
+            });
+
+            // 2. Show target section
+            const targetSection = document.getElementById(sectionId);
+            if(targetSection) {
+                targetSection.classList.add('active');
+            }
+
+            // 3. Update active nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-target') === sectionId) {
+                    link.classList.add('active');
+                }
+            });
+
+            // 4. Dynamic Header Styling (Dark mode for community page)
+            if (sectionId === 'community') {
+                header.style.background = 'rgba(18, 11, 28, 0.8)';
+                document.querySelectorAll('.nav-link').forEach(link => link.style.color = '#F8F8FF');
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.1)';
+                // Reset text color based on screen size
+                if(window.innerWidth > 768){
+                    document.querySelectorAll('.nav-link').forEach(link => link.style.color = '#333333');
+                }
+            }
+
+            // 5. Close mobile menu if open
+            if (navLinksList.classList.contains('active')) {
+                toggleMenu();
+            }
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // === MOBILE MENU TOGGLE ===
+        function toggleMenu() {
+            navLinksList.classList.toggle('active');
+        }
+
+        // Initialize first load
+        window.onload = () => {
+            navigateTo('home');
+        };
+    </script>
+</body>
+</html>
