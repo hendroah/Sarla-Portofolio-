@@ -1,27 +1,27 @@
 ```html
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sarlaa - Web3 Community Enthusiast</title>
     <style>
-        /* Import Google Font untuk tampilan modern dan elegan */
+        /* Import Google Font for modern and elegant look */
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
-        /* CSS Variables & Color Palette */
+        /* CSS Variables & Color Palette (Dark Red & Black Theme) */
         :root {
-            --soft-pink: #FFD1DC;
-            --sakura-pink: #FFB7C5;
-            --lavender: #E6E6FA;
-            --white: #FFFFFF;
-            --neon-cyan: #00FFFF;
-            --neon-purple: #B026FF;
-            --dark-bg: #120b1c;
-            --text-dark: #333333;
-            --text-light: #F8F8FF;
-            --glass-bg: rgba(255, 255, 255, 0.4);
-            --glass-border: rgba(255, 255, 255, 0.6);
+            --soft-pink: #ff3366; /* Vibrant Red-Pink */
+            --sakura-pink: #ff0033; /* Deep Red */
+            --lavender: #b392ac; /* Kept for subtle accents in other pages */
+            --white: #0a0005; /* Very Dark, almost black background */
+            --neon-cyan: #ff3366; /* Changed cyan to red/pink glow */
+            --neon-purple: #cc0000; /* Deep crimson */
+            --dark-bg: #050002; /* Pure dark */
+            --text-dark: #f0e6f5; /* Light text for dark bg */
+            --text-light: #ffffff;
+            --glass-bg: rgba(30, 0, 10, 0.6); /* Dark reddish glass */
+            --glass-border: rgba(255, 0, 51, 0.2); /* Red border */
         }
 
         /* Reset & Base Styles */
@@ -39,7 +39,7 @@
             transition: background 0.5s ease;
         }
 
-        /* Sakura Animation Container */
+        /* Dark/Red Sakura Animation Container */
         #sakura-container {
             position: fixed;
             top: 0;
@@ -53,9 +53,10 @@
 
         .petal {
             position: absolute;
-            background: linear-gradient(135deg, var(--sakura-pink), #fff);
+            /* Gradient from deep red to dark grey/black */
+            background: linear-gradient(135deg, var(--sakura-pink), #222);
             border-radius: 15px 0 15px 0;
-            box-shadow: 0 0 5px rgba(255, 183, 197, 0.5);
+            box-shadow: 0 0 8px rgba(255, 0, 51, 0.6); /* Red glow */
             opacity: 0.8;
             pointer-events: none;
             animation: fall linear infinite;
@@ -77,10 +78,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(10, 0, 5, 0.85); /* Dark header */
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 0, 51, 0.3); /* Red line */
             z-index: 1000;
             transition: all 0.3s ease;
         }
@@ -88,11 +89,11 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--neon-purple);
+            color: var(--soft-pink);
             display: flex;
             align-items: center;
             gap: 5px;
-            text-shadow: 0 0 10px rgba(176, 38, 255, 0.3);
+            text-shadow: 0 0 10px rgba(255, 51, 102, 0.6);
             animation: bounceSoft 3s ease-in-out infinite;
             cursor: pointer;
         }
@@ -109,7 +110,7 @@
 
         @keyframes twinkle {
             from { opacity: 0.5; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1.2); text-shadow: 0 0 15px var(--neon-cyan); }
+            to { opacity: 1; transform: scale(1.2); text-shadow: 0 0 15px var(--soft-pink); }
         }
 
         nav ul {
@@ -152,7 +153,7 @@
         .menu-toggle span {
             width: 25px;
             height: 3px;
-            background-color: var(--neon-purple);
+            background-color: var(--soft-pink);
             border-radius: 5px;
             transition: 0.3s;
         }
@@ -177,11 +178,10 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- HOME PAGE (Soft Sakura Dreamy) --- */
+        /* --- HOME PAGE (Dark Red & Black Theme) --- */
         #home {
-            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 183, 197, 0.6)), 
+            background: linear-gradient(rgba(10, 0, 5, 0.9), rgba(30, 0, 10, 0.85)), 
                         url('https://raw.githubusercontent.com/hendroah/Sarla-Portofolio-/b16358e64c0618b0bb45575fefadbeed771480e3/IMG-20260624-WA0074.jpg') center/cover no-repeat;
-            /* Latar belakang disesuaikan dengan gambar dan overlay pink agar teks tetap terbaca */
         }
 
         .home-content {
@@ -196,30 +196,32 @@
             width: 200px;
             height: 200px;
             border-radius: 50%;
-            background: url('https://raw.githubusercontent.com/hendroah/Sarla-Portofolio-/edc7d25b4782abb55e8666099ff5cb8e6b474a59/IMG-20260624-WA0073.jpg') center/cover;
-            border: 5px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 0 25px var(--sakura-pink), inset 0 0 15px rgba(255, 255, 255, 0.5);
+            /* Updated PFP Link */
+            background: url('https://raw.githubusercontent.com/hendroah/Sarla-Portofolio-/539bf9797fe5e750fab7f06da51d6b8d5cda4b91/file_00000000318471fdb4679827534f4282.png') center/cover;
+            border: 5px solid rgba(255, 0, 51, 0.5); /* Red border */
+            box-shadow: 0 0 25px var(--sakura-pink), inset 0 0 15px rgba(255, 0, 51, 0.3);
             animation: sakuraPulse 3s infinite alternate;
             margin-bottom: 20px;
         }
 
         @keyframes sakuraPulse {
-            from { box-shadow: 0 0 20px var(--sakura-pink), 0 0 10px rgba(255, 183, 197, 0.5); }
-            to { box-shadow: 0 0 40px var(--soft-pink), 0 0 25px var(--sakura-pink); }
+            from { box-shadow: 0 0 20px var(--sakura-pink), 0 0 10px rgba(255, 0, 51, 0.5); }
+            to { box-shadow: 0 0 40px var(--neon-purple), 0 0 25px var(--soft-pink); }
         }
 
         .home-title {
             font-size: 4rem;
             font-weight: 700;
-            background: linear-gradient(45deg, #ff6b81, var(--neon-purple));
+            background: linear-gradient(45deg, var(--sakura-pink), #ff6666);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 5px;
+            text-shadow: 0 0 20px rgba(255, 0, 51, 0.4);
         }
 
         .home-subtitle {
             font-size: 1.5rem;
-            color: #555;
+            color: #d1d1e0;
             letter-spacing: 2px;
             margin-bottom: 30px;
         }
@@ -243,16 +245,16 @@
         .btn-primary {
             background: linear-gradient(45deg, var(--sakura-pink), var(--neon-purple));
             color: white;
-            box-shadow: 0 4px 15px rgba(176, 38, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(255, 0, 51, 0.4);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(176, 38, 255, 0.5);
+            box-shadow: 0 8px 25px rgba(255, 0, 51, 0.6);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(30, 0, 10, 0.5);
             color: var(--text-dark);
             border: 2px solid var(--sakura-pink);
             backdrop-filter: blur(5px);
@@ -260,20 +262,22 @@
 
         .btn-secondary:hover {
             background: var(--sakura-pink);
-            color: white;
+            color: #fff;
             transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 0, 51, 0.4);
         }
 
-        /* --- ABOUT PAGE (Clean White Pink Elegant) --- */
+        /* --- ABOUT PAGE (Dark Elegant) --- */
         #about {
-            background: radial-gradient(circle at top left, #ffffff, #fff0f5);
+            background: radial-gradient(circle at top left, #1a0005, #0a0002);
         }
 
         .section-title {
             font-size: 2.5rem;
             margin-bottom: 40px;
             text-align: center;
-            color: var(--neon-purple);
+            color: var(--soft-pink);
+            text-shadow: 0 0 15px rgba(255, 51, 102, 0.4);
             position: relative;
         }
 
@@ -293,20 +297,20 @@
             padding: 50px;
             border-radius: 30px;
             max-width: 800px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
             text-align: center;
             line-height: 1.8;
             font-size: 1.1rem;
-            color: #444;
+            color: #e0d8ea;
         }
 
         .about-card p {
             margin-bottom: 20px;
         }
 
-        /* --- WEB3 ACTIVITY (Futuristic Lavender Cyber) --- */
+        /* --- WEB3 ACTIVITY (Dark Red/Cyber) --- */
         #web3-activity {
-            background: linear-gradient(135deg, #e6e6fa, #f3e5f5, #e0f7fa);
+            background: linear-gradient(135deg, #110005, #1a000a, #0d0005);
         }
 
         .grid-container {
@@ -318,15 +322,15 @@
         }
 
         .activity-card {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(30, 0, 10, 0.5);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 255, 255, 0.3);
+            border: 1px solid rgba(255, 0, 51, 0.2);
             border-radius: 20px;
             padding: 30px;
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         }
 
         .activity-card::before {
@@ -334,7 +338,7 @@
             position: absolute;
             top: -50%; left: -50%;
             width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 51, 102, 0.15) 0%, transparent 70%);
             opacity: 0;
             transition: 0.5s;
         }
@@ -345,8 +349,8 @@
 
         .activity-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(176, 38, 255, 0.2);
-            border-color: var(--neon-purple);
+            box-shadow: 0 15px 30px rgba(255, 0, 51, 0.2);
+            border-color: var(--soft-pink);
         }
 
         .icon-box {
@@ -358,17 +362,17 @@
         .activity-card h3 {
             font-size: 1.3rem;
             margin-bottom: 10px;
-            color: #2c3e50;
+            color: var(--soft-pink);
         }
 
         .activity-card p {
             font-size: 0.95rem;
-            color: #666;
+            color: #d1c8de;
         }
 
-        /* --- SKILLS PAGE (Modern Glass Card) --- */
+        /* --- SKILLS PAGE (Dark Glass Card) --- */
         #skills {
-            background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+            background: linear-gradient(120deg, #0a0002 0%, #140005 100%);
             position: relative;
         }
 
@@ -380,9 +384,9 @@
             z-index: -1;
             animation: float 10s infinite ease-in-out;
         }
-        .blob-1 { top: 20%; left: 10%; width: 300px; height: 300px; background: var(--sakura-pink); opacity: 0.5; }
-        .blob-2 { bottom: 10%; right: 10%; width: 400px; height: 400px; background: var(--lavender); opacity: 0.6; }
-        .blob-3 { top: 50%; left: 50%; width: 250px; height: 250px; background: #e0f7fa; opacity: 0.5; animation-delay: -5s; }
+        .blob-1 { top: 20%; left: 10%; width: 300px; height: 300px; background: rgba(255, 0, 51, 0.2); }
+        .blob-2 { bottom: 10%; right: 10%; width: 400px; height: 400px; background: rgba(204, 0, 0, 0.2); }
+        .blob-3 { top: 50%; left: 50%; width: 250px; height: 250px; background: rgba(255, 51, 102, 0.15); animation-delay: -5s; }
 
         @keyframes float {
             0%, 100% { transform: translate(0, 0); }
@@ -398,36 +402,32 @@
         }
 
         .skill-item {
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(30, 0, 10, 0.5);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 0, 51, 0.2);
             padding: 20px;
             border-radius: 15px;
             text-align: center;
             font-weight: 600;
-            color: #444;
+            color: #e0d8ea;
             transition: 0.3s;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
         }
 
         .skill-item:hover {
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(50, 0, 20, 0.6);
             transform: scale(1.05);
-            border-color: var(--sakura-pink);
-            color: var(--neon-purple);
+            border-color: var(--soft-pink);
+            color: var(--text-light);
+            box-shadow: 0 8px 32px 0 rgba(255, 51, 102, 0.2);
         }
 
         /* --- COMMUNITY EXPERIENCE (Dark Soft Web3 Glow) --- */
         #community {
             background: var(--dark-bg);
             color: var(--text-light);
-            background-image: radial-gradient(circle at center, #2a1b3d 0%, var(--dark-bg) 100%);
-        }
-
-        #community .section-title {
-            color: var(--sakura-pink);
-            text-shadow: 0 0 15px rgba(255, 183, 197, 0.5);
+            background-image: radial-gradient(circle at center, #1a0005 0%, var(--dark-bg) 100%);
         }
 
         .timeline {
@@ -443,6 +443,11 @@
             position: relative;
         }
 
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -450,29 +455,30 @@
             top: 0;
             width: 15px;
             height: 15px;
-            background: var(--neon-cyan);
+            background: var(--soft-pink);
             border-radius: 50%;
-            box-shadow: 0 0 15px var(--neon-cyan);
+            box-shadow: 0 0 15px var(--soft-pink);
         }
 
         .exp-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(176, 38, 255, 0.3);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 0, 51, 0.3);
             padding: 25px;
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(176, 38, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
             transition: 0.3s;
             backdrop-filter: blur(10px);
         }
 
         .exp-card:hover {
-            box-shadow: 0 0 30px rgba(176, 38, 255, 0.3);
-            border-color: var(--neon-cyan);
+            box-shadow: 0 0 30px rgba(255, 0, 51, 0.2);
+            border-color: var(--soft-pink);
             transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.04);
         }
 
         .exp-card h3 {
-            color: var(--neon-cyan);
+            color: var(--soft-pink);
             margin-bottom: 10px;
         }
 
@@ -481,9 +487,9 @@
             line-height: 1.6;
         }
 
-        /* --- CONTACT (Cute Minimal Feminine) --- */
+        /* --- CONTACT (Dark Minimalist) --- */
         #contact {
-            background: #fffafa;
+            background: #050002;
         }
 
         .contact-container {
@@ -494,16 +500,15 @@
             max-width: 500px;
         }
 
-        /* Diubah menjadi anchor styling agar clickable */
         .contact-item {
             display: flex;
             align-items: center;
             gap: 15px;
-            background: white;
+            background: rgba(30, 0, 10, 0.6);
             padding: 15px 25px;
             border-radius: 50px;
-            box-shadow: 0 5px 15px rgba(255, 183, 197, 0.3);
-            border: 1px solid var(--soft-pink);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 0, 51, 0.2);
             transition: 0.3s;
             text-decoration: none;
             color: var(--text-dark);
@@ -512,9 +517,9 @@
 
         .contact-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(176, 38, 255, 0.2);
-            border-color: var(--neon-purple);
-            background: rgba(255, 230, 235, 0.3); /* Slight hover tint */
+            box-shadow: 0 10px 20px rgba(255, 0, 51, 0.2);
+            border-color: var(--soft-pink);
+            background: rgba(50, 0, 20, 0.6);
         }
 
         .contact-icon {
@@ -543,7 +548,7 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: rgba(255, 255, 255, 0.95);
+                background: rgba(10, 0, 5, 0.95);
                 backdrop-filter: blur(10px);
                 flex-direction: column;
                 align-items: center;
@@ -551,11 +556,11 @@
                 max-height: 0;
                 overflow: hidden;
                 transition: 0.4s ease;
-                border-bottom: 1px solid var(--soft-pink);
+                border-bottom: 1px solid rgba(255, 0, 51, 0.3);
             }
 
             nav ul.active {
-                max-height: 300px;
+                max-height: 350px;
             }
 
             nav ul li {
@@ -566,7 +571,7 @@
             nav ul li a {
                 display: block;
                 padding: 15px;
-                color: var(--text-dark) !important; /* Force dark text on mobile menu */
+                color: var(--text-dark) !important; 
             }
 
             .home-title { font-size: 3rem; }
@@ -584,13 +589,13 @@
 </head>
 <body>
 
-    <!-- Animasi Sakura -->
+    <!-- Sakura Animation -->
     <div id="sakura-container"></div>
 
     <!-- Header & Navigation -->
     <header id="header">
         <div class="logo" onclick="navigateTo('home')">
-            My Portofolio <span class="sparkle">✨</span>
+            My Portfolio <span class="sparkle">✨</span>
         </div>
         <div class="menu-toggle" id="mobile-menu" onclick="toggleMenu()">
             <span class="bar"></span>
@@ -603,7 +608,7 @@
                 <li><a href="#" onclick="navigateTo('about')" class="nav-link" data-target="about">About</a></li>
                 <li><a href="#" onclick="navigateTo('web3-activity')" class="nav-link" data-target="web3-activity">Web3 Activity</a></li>
                 <li><a href="#" onclick="navigateTo('skills')" class="nav-link" data-target="skills">Skills</a></li>
-                <li><a href="#" onclick="navigateTo('community')" class="nav-link" data-target="community">Community</a></li>
+                <li><a href="#" onclick="navigateTo('community')" class="nav-link" data-target="community">Experience</a></li>
                 <li><a href="#" onclick="navigateTo('contact')" class="nav-link" data-target="contact">Contact</a></li>
             </ul>
         </nav>
@@ -627,8 +632,8 @@
         <section id="about">
             <h2 class="section-title">About Me</h2>
             <div class="about-card">
-                <p>Saya merupakan individu yang aktif berpartisipasi dalam ekosistem Web3 dan memiliki minat yang tinggi terhadap perkembangan teknologi blockchain, AI, dan komunitas digital global. Saya terbiasa berinteraksi dengan komunitas internasional, membangun engagement, serta berkontribusi dalam berbagai aktivitas komunitas seperti diskusi, event, dan campaign.</p>
-                <p>Saya memiliki kemampuan beradaptasi dengan cepat, semangat belajar yang tinggi, dan mampu bekerja secara kolaboratif dalam lingkungan yang dinamis.</p>
+                <p>I am an individual actively participating in the Web3 ecosystem with a high interest in the development of blockchain technology, AI, and global digital communities. I am accustomed to interacting with international communities, building engagement, and contributing to various community activities such as discussions, events, and campaigns.</p>
+                <p>I have the ability to adapt quickly, a strong eagerness to learn, and the capability to work collaboratively in a dynamic environment.</p>
             </div>
         </section>
 
@@ -639,22 +644,22 @@
                 <div class="activity-card">
                     <div class="icon-box">👾</div>
                     <h3>Discord Community</h3>
-                    <p>Aktif berinteraksi, memoderasi, dan membangun engagement dalam komunitas Web3 internasional di platform Discord.</p>
+                    <p>Actively interacting, moderating, and building engagement within international Web3 communities on the Discord platform.</p>
                 </div>
                 <div class="activity-card">
                     <div class="icon-box">✈️</div>
                     <h3>Telegram Network</h3>
-                    <p>Mengelola dan berpartisipasi aktif dalam grup diskusi Telegram untuk update project, sharing informasi, dan networking.</p>
+                    <p>Managing and actively participating in Telegram discussion groups for project updates, information sharing, and networking.</p>
                 </div>
                 <div class="activity-card">
                     <div class="icon-box">🎉</div>
-                    <h3>Campaign & Event</h3>
-                    <p>Terlibat dalam berbagai platform campaign, whitelist grinding, Zealy, Galxe, dan event Web3 global lainnya.</p>
+                    <h3>Campaigns & Events</h3>
+                    <p>Involved in various campaign platforms, whitelist grinding, Zealy, Galxe, and other global Web3 events.</p>
                 </div>
                 <div class="activity-card">
                     <div class="icon-box">🔗</div>
                     <h3>Blockchain & AI Ecosystem</h3>
-                    <p>Mengikuti perkembangan ekosistem blockchain terbaru dan integrasi AI dalam aktivitas komunitas digital masa depan.</p>
+                    <p>Following the latest developments in the blockchain ecosystem and AI integration in future digital community activities.</p>
                 </div>
             </div>
         </section>
@@ -688,7 +693,7 @@
                 <div class="timeline-item">
                     <div class="exp-card">
                         <h3>Community Moderator</h3>
-                        <p style="color: var(--sakura-pink); margin-bottom: 12px; font-size: 0.95rem; font-weight: 500;">📍 KOLs</p>
+                        <p style="color: var(--soft-pink); margin-bottom: 12px; font-size: 0.95rem; font-weight: 500;">📍 KOLs</p>
                         <p>Managing and moderating the KOLs community channels. Ensuring a safe, engaging, and active environment for members while assisting with daily inquiries.</p>
                     </div>
                 </div>
@@ -697,7 +702,7 @@
                 <div class="timeline-item">
                     <div class="exp-card">
                         <h3>Community Moderator</h3>
-                        <p style="color: var(--sakura-pink); margin-bottom: 12px; font-size: 0.95rem; font-weight: 500;">📍 Syntrax</p>
+                        <p style="color: var(--soft-pink); margin-bottom: 12px; font-size: 0.95rem; font-weight: 500;">📍 Syntrax</p>
                         <p>Serving as a moderator for Syntrax. Resolving issues, assisting members, and strictly enforcing community guidelines to maintain a healthy ecosystem.</p>
                     </div>
                 </div>
@@ -706,7 +711,7 @@
                 <div class="timeline-item">
                     <div class="exp-card">
                         <h3>Brand Ambassador</h3>
-                        <p style="color: var(--sakura-pink); margin-bottom: 12px; font-size: 0.95rem; font-weight: 500;">📍 DRX</p>
+                        <p style="color: var(--soft-pink); margin-bottom: 12px; font-size: 0.95rem; font-weight: 500;">📍 DRX</p>
                         <p>Serving as a brand ambassador to promote DRX awareness globally. Driving community growth, actively assisting in campaigns, and bridging the core team and community.</p>
                     </div>
                 </div>
@@ -715,7 +720,7 @@
                 <div class="timeline-item">
                     <div class="exp-card">
                         <h3>OG (Early Supporter)</h3>
-                        <p style="color: var(--sakura-pink); margin-bottom: 12px; font-size: 0.95rem; font-weight: 500;">📍 Neosoul</p>
+                        <p style="color: var(--soft-pink); margin-bottom: 12px; font-size: 0.95rem; font-weight: 500;">📍 Neosoul</p>
                         <p>Recognized as an Original Gangster (OG) and early contributor for Neosoul. Actively participating since the early stages and helping shape a strong community culture.</p>
                     </div>
                 </div>
@@ -724,7 +729,7 @@
                 <div class="timeline-item">
                     <div class="exp-card">
                         <h3>OG (Early Supporter)</h3>
-                        <p style="color: var(--sakura-pink); margin-bottom: 12px; font-size: 0.95rem; font-weight: 500;">📍 KOLs</p>
+                        <p style="color: var(--soft-pink); margin-bottom: 12px; font-size: 0.95rem; font-weight: 500;">📍 KOLs</p>
                         <p>Early supporter and OG for the KOLs project, providing valuable feedback and maintaining consistent positive engagement since its inception.</p>
                     </div>
                 </div>
@@ -733,7 +738,7 @@
                 <div class="timeline-item">
                     <div class="exp-card">
                         <h3>OG (Early Supporter)</h3>
-                        <p style="color: var(--sakura-pink); margin-bottom: 12px; font-size: 0.95rem; font-weight: 500;">📍 Syntrax</p>
+                        <p style="color: var(--soft-pink); margin-bottom: 12px; font-size: 0.95rem; font-weight: 500;">📍 Syntrax</p>
                         <p>OG member of Syntrax, continuously contributing to the ecosystem and supporting the project's development and community growth.</p>
                     </div>
                 </div>
@@ -775,7 +780,7 @@
     <script>
         // === SAKURA ANIMATION GENERATOR ===
         const sakuraContainer = document.getElementById('sakura-container');
-        const maxPetals = 40; // Batas maksimal bunga di layar
+        const maxPetals = 40; // Max petals on screen
         
         function createPetal() {
             if (sakuraContainer.childElementCount > maxPetals) return;
@@ -832,19 +837,7 @@
                 }
             });
 
-            // 4. Dynamic Header Styling (Dark mode for community page)
-            if (sectionId === 'community') {
-                header.style.background = 'rgba(18, 11, 28, 0.8)';
-                document.querySelectorAll('.nav-link').forEach(link => link.style.color = '#F8F8FF');
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.1)';
-                // Reset text color based on screen size
-                if(window.innerWidth > 768){
-                    document.querySelectorAll('.nav-link').forEach(link => link.style.color = '#333333');
-                }
-            }
-
-            // 5. Close mobile menu if open
+            // 4. Close mobile menu if open
             if (navLinksList.classList.contains('active')) {
                 toggleMenu();
             }
